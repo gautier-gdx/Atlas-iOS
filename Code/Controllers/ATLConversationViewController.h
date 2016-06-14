@@ -72,7 +72,7 @@ NS_ASSUME_NONNULL_BEGIN
  @discussion Applications should only return a value if the `message` object requires a custom cell class. If `nil` is returned, the collection view will default
  to internal height calculations.
  */
-- (CGFloat)conversationViewController:(ATLConversationViewController *)viewController heightForMessage:(LYRMessage *)message withCellWidth:(CGFloat)cellWidth;
+- (nullable CGFloat)conversationViewController:(ATLConversationViewController *)viewController heightForMessage:(LYRMessage *)message withCellWidth:(CGFloat)cellWidth;
 
 /**
  @abstract Informs the delegate of a cell being configured for the specified message.
@@ -97,7 +97,7 @@ NS_ASSUME_NONNULL_BEGIN
  current conversation for the controller. If implemented, applications should also register custom `UICollectionViewCell` classes with the controller via
  a call to `registerClass:forMessageCellWithReuseIdentifier:`. They should also implement the optional data source method, `conversationViewController:reuseIdentifierForMessage:`.
  */
-- (NSOrderedSet <LYRMessage*> *)conversationViewController:(ATLConversationViewController *)viewController messagesForMediaAttachments:(NSArray <ATLMediaAttachment*> *)mediaAttachments;
+- (nullable NSOrderedSet <LYRMessage*> *)conversationViewController:(ATLConversationViewController *)viewController messagesForMediaAttachments:(NSArray <ATLMediaAttachment*> *)mediaAttachments;
 
 @end
 
